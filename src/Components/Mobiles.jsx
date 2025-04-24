@@ -2,10 +2,10 @@ import React from 'react';
 
 const Mobiles = ({ phone }) => {
 
-    const { name, brand, description, image } = phone;
+    const { name, description, image } = phone;
 
     return (
-        <div className="card bg-base-100 border shadow-md border-gray-400  shadow-sm">
+        <div className="card bg-base-100 border shadow-md border-gray-400 ">
             <figure>
                 <img className=''
                     src={image}>
