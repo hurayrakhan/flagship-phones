@@ -1,4 +1,7 @@
 import React from 'react';
+import { NavLink } from 'react-router';
+import { FaShoppingCart } from "react-icons/fa";
+import { MdBookmarkAdd } from "react-icons/md";
 
 const Navbar = () => {
     return (
@@ -11,36 +14,20 @@ const Navbar = () => {
                     <ul
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        <li><a>Item 1</a></li>
-                        <li>
-                            <a>Parent</a>
-                            <ul className="p-2">
-                                <li><a>Submenu 1</a></li>
-                                <li><a>Submenu 2</a></li>
-                            </ul>
-                        </li>
-                        <li><a>Item 3</a></li>
+                        <li><NavLink to={'/'} className={({ isActive }) => isActive ? "text-indigo-800 font font-semibold border border-indigo-800" : ""}>Home</NavLink></li>
+                        <li><NavLink to={'/about'} className={({ isActive }) => isActive ? "text-indigo-800 font font-semibold border border-indigo-800" : ""}>About us</NavLink></li>
+
                     </ul>
                 </div>
                 <a className="btn btn-ghost text-xl">daisyUI</a>
             </div>
-            <div className="navbar-center hidden lg:flex">
+            <div className="navbar-end  hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                    <li><a>Item 1</a></li>
-                    <li>
-                        <details>
-                            <summary>Parent</summary>
-                            <ul className="p-2">
-                                <li><a>Submenu 1</a></li>
-                                <li><a>Submenu 2</a></li>
-                            </ul>
-                        </details>
-                    </li>
-                    <li><a>Item 3</a></li>
+                    <li><NavLink to={'/'} className={({ isActive }) => isActive ? "text-indigo-800 font font-semibold border border-indigo-800" : ""}>Home</NavLink></li>
+                    <li><NavLink to={'/about'} className={({ isActive }) => isActive ? "text-indigo-800 font font-semibold border border-indigo-800" : ""}>About</NavLink></li>
+                    <li><NavLink to={'/cart'} className={({ isActive }) => isActive ? "text-indigo-800 font font-semibold border border-indigo-800" : ""}><FaShoppingCart size={20} /></NavLink></li>
+                    <li><NavLink to={'/favorites'} className={({ isActive }) => isActive ? "text-indigo-800 font font-semibold border border-indigo-800" : ""}><MdBookmarkAdd size={20} /></NavLink></li>
                 </ul>
-            </div>
-            <div className="navbar-end">
-                <a className="btn">Button</a>
             </div>
         </div>
     );
